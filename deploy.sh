@@ -10,6 +10,7 @@ docker push dockerozns/multi-client-k8s:$SHA
 docker push dockerozns/multi-server-k8s-pgfix:$SHA
 docker push dockerozns/multi-worker-k8s:$SHA
 
+
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=dockerozns/multi-server-k8s-pgfix:$SHA
 kubectl set image deployments/client-deployment client=dockerozns/multi-client-k8s:$SHA
